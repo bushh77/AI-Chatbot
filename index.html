@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Chat Assistant</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- Sidebar with chat history -->
+    <aside class="sidebar">
+      <button class="new-chat-btn" id="newChatBtn">+ New Chat</button>
+      <div class="chat-list" id="chatList"></div>
+
+      <div class="theme-toggle">
+        <button id="themeBtn" aria-label="Toggle theme">
+          <span class="sun">☀️</span>
+          <span class="moon">🌙</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main area -->
+    <main class="main-content">
+
+      <!-- Landing screen -->
+      <div id="landingScreen" class="landing-screen">
+        <div class="hero">
+          <div class="sparkle">✨</div>
+          <h1>AI Chat Assistant</h1>
+          <p class="subtitle">
+            Ask anything. Get fast, smart answers powered by Groq.
+          </p>
+          <button id="startChatBtn" class="start-chat-button">
+            Start New Chat
+          </button>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-item">
+            <h3>Smart</h3>
+            <p>Complex reasoning & code generation</p>
+          </div>
+          <div class="feature-item">
+            <h3>Fast</h3>
+            <p>Streaming responses in real-time</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat interface -->
+      <div id="chatInterface" class="chat-interface hidden">
+        <header class="chat-header">
+          <div class="header-left">
+            <button id="backBtn" class="back-button">← Back</button>
+          </div>
+
+          <h2 id="chatTitle" contenteditable="true" spellcheck="false">New Chat</h2>
+
+          <div class="header-right">
+            <button id="newChatBtnHeader" class="new-chat-header-btn">+ New Chat</button>
+          </div>
+        </header>
+
+        <div class="messages-area" id="messages"></div>
+
+        <div class="input-container">
+          <div class="input-box">
+            <input type="text" id="userMessage" placeholder="Ask anything..." autocomplete="off" />
+            <button id="sendMessageBtn">↑</button>
+          </div>
+          <div class="disclaimer">AI can make mistakes. Check important info.</div>
+        </div>
+      </div>
+
+      <footer class="footer-note">
+        Powered by Groq • AI Chat
+      </footer>
+    </main>
+  </div>
+
+  <canvas id="waveCanvas" class="wave-bg"></canvas>
+
+  <script src="wave.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
